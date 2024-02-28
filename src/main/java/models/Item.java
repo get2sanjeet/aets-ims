@@ -2,6 +2,7 @@ package main.java.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * Author: Afif Al Mamun
@@ -9,6 +10,7 @@ import lombok.Data;
  * Project: TeslaRentalInventory
  **/
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class Item {
     int id;

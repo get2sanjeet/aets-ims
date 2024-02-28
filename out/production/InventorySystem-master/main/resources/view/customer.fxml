@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="cusTomerPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="661.0" prefWidth="1169.0" stylesheets="@../css/customer.css" xmlns="http://javafx.com/javafx/8.0.371" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.CustomerController">
+   <children>
+      <AnchorPane fx:id="customerListPane" layoutY="85.0" prefHeight="581.0" prefWidth="1169.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="85.0">
+         <children>
+            <TableView fx:id="tbl" nodeOrientation="LEFT_TO_RIGHT" prefHeight="354.0" prefWidth="1142.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="20.0">
+               <columns>
+                  <TableColumn fx:id="columnID" prefWidth="89.0" text="Customer ID" />
+                  <TableColumn fx:id="columnFirstName" prefWidth="259.0" text="Merchant Name" />
+                  <TableColumn fx:id="columnGender" prefWidth="75.0" text="Gender" />
+                  <TableColumn fx:id="columnAddress" prefWidth="292.0" text="Address" />
+                  <TableColumn fx:id="columnPhone" minWidth="0.0" prefWidth="148.0" text="Phone" />
+                  <TableColumn fx:id="columnEmail" prefWidth="179.0" text="Email" />
+               </columns>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </TableView>
+            <JFXButton fx:id="btnGoBack" alignment="CENTER" buttonType="RAISED" graphicTextGap="10.0" layoutX="500.0" layoutY="460.0" prefHeight="50.0" prefWidth="170.0" ripplerFill="WHITE" text="Go Back" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="500.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIconView fill="#263238" glyphName="LIST_ALT" size="30" />
+               </graphic>
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-3.0" prefHeight="85.0" prefWidth="1169.0" style="-fx-background-color: #253238;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="446.0" layoutY="7.0" prefHeight="72.0" prefWidth="338.0" text="Customer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Label>
+            <Line endX="143.0" layoutX="319.0" layoutY="81.0" startX="448.0" AnchorPane.leftAnchor="461.5" AnchorPane.rightAnchor="401.5" />
+            <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_CIRCLE" layoutX="486.0" layoutY="58.0" size="40" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="customerPane" layoutY="113.0" prefHeight="739.0" prefWidth="1169.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="85.0">
+              <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="608.0" layoutX="20.0" layoutY="81.0" stroke="#a2d1f8bf" strokeLineCap="ROUND" strokeWidth="0.1" width="616.0">
+               <effect>
+                  <DropShadow color="#a2d1f8" />
+               </effect>
+            </Rectangle>
+                 <JFXTextField fx:id="txtFName" alignment="TOP_LEFT" editable="false" focusColor="#4a5d65" layoutX="374.0" layoutY="193.0" prefHeight="31.0" prefWidth="232.0" unFocusColor="#90d3da">
+                    <font>
+                       <Font size="15.0" />
+                    </font>
+                 </JFXTextField>
+                 <Label layoutX="288.0" layoutY="253.0" prefHeight="44.0" prefWidth="62.0" text="Billing Address:" textFill="#615e5e" wrapText="true">
+                    <font>
+                       <Font name="System Bold" size="14.0" />
+                    </font>
+                 </Label>
+                 <JFXTextField fx:id="addressOne" alignment="TOP_LEFT" editable="false" focusColor="#263238" layoutX="372.0" layoutY="275.0" prefHeight="31.0" prefWidth="240.0" promptText="Building name" unFocusColor="#90d3da">
+                    <font>
+                       <Font size="15.0" />
+                    </font>
+            </JFXTextField>
+                 <Label layoutX="289.0" layoutY="509.0" prefHeight="44.0" prefWidth="78.0" text="Email:" textFill="#615e5e">
+                    <font>
+                       <Font name="System Bold" size="14.0" />
+                    </font>
+                 </Label>
+                 <JFXTextField fx:id="phone" alignment="TOP_LEFT" editable="false" focusColor="#263238" layoutX="374.0" layoutY="458.0" prefHeight="31.0" prefWidth="232.0" unFocusColor="#90d3da">
+                    <font>
+                       <Font size="15.0" />
+                    </font>
+                 </JFXTextField>
+                 <JFXTextField fx:id="email" alignment="TOP_LEFT" editable="false" focusColor="#263238" layoutX="374.0" layoutY="518.0" prefHeight="31.0" prefWidth="232.0" unFocusColor="#90d3da">
+                    <font>
+                       <Font size="15.0" />
+                    </font>
+            </JFXTextField>
+                 <Separator layoutX="661.0" layoutY="80.0" orientation="VERTICAL" prefHeight="569.0" prefWidth="4.0" style="-fx-background-color: #263238;" />
+                 <Label layoutX="54.0" layoutY="398.0" prefHeight="44.0" prefWidth="78.0" text="Gender:">
+                    <font>
+                       <Font name="System Bold" size="14.0" />
+                    </font>
+                 </Label>
+                 <Label layoutX="104.0" layoutY="328.0" prefHeight="31.0" prefWidth="106.0" text="Member Since:">
+                    <font>
+                       <Font name="System Bold" size="14.0" />
+                    </font>
+                 </Label>
+                 <Label fx:id="memberSince" alignment="CENTER" layoutX="67.0" layoutY="354.0" prefHeight="44.0" prefWidth="170.0" text="Date" textAlignment="CENTER">
+                    <font>
+                       <Font name="System Bold" size="14.0" />
+                    </font>
+                 </Label>
+                 <JFXToggleButton fx:id="btnEditMode" contentDisplay="RIGHT" layoutX="868.0" layoutY="82.0" onAction="#btnEditModeToggle" prefHeight="80.0" prefWidth="170.0" size="14.0" text="Edit Mode" toggleColor="#263238" toggleLineColor="#78909c">
+                    <font>
+                       <Font name="System Bold" size="15.0" />
+                    </font>
+                    <tooltip>
+                       <Tooltip text="Enable/Disable Edit Mode" />
+                    </tooltip>
+                 </JFXToggleButton>
+                 <JFXButton fx:id="btnPrevEntry" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="187.0" layoutY="580.0" prefHeight="61.0" prefWidth="59.0" ripplerFill="#c9c3c3" style="-fx-background-radius: 40 40 40 40; -fx-border-radius: 40 40 40 40;" stylesheets="@../css/customer.css">
+                    <graphic>
+                       <FontAwesomeIconView fill="#263238" glyphName="ANGLE_LEFT" size="40" strokeLineCap="ROUND" wrappingWidth="13.071428298950195" />
+                    </graphic>
+                    <cursor>
+                       <Cursor fx:constant="HAND" />
+                    </cursor>
+                 </JFXButton>
+                 <JFXButton fx:id="btnAddNew" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="259.0" layoutY="580.0" onAction="#btnAddMode" prefHeight="61.0" prefWidth="59.0" ripplerFill="#c9c3c3" style="-fx-background-radius: 40 40 40 40;" stylesheets="@../css/customer.css">
+                    <cursor>
+                       <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <graphic>
+                       <FontAwesomeIconView fx:id="btnAddIcon" fill="#263238" glyphName="PLUS" size="30" />
+                    </graphic>
+                 </JFXButton>
+                 <JFXButton fx:id="btnNextEntry" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="411.0" layoutY="580.0" prefHeight="61.0" prefWidth="59.0" ripplerFill="#c9c3c3" style="-fx-background-radius: 40 40 40 40; -fx-border-radius: 40 40 40 40;" stylesheets="@../css/customer.css">
+                    <graphic>
+                       <FontAwesomeIconView fill="#263238" glyphName="ANGLE_RIGHT" size="40" strokeLineCap="ROUND" text="" wrappingWidth="13.071428298950195" />
+                    </graphic>
+                    <cursor>
+                       <Cursor fx:constant="HAND" />
+                    </cursor>
+                 </JFXButton>
+                 <JFXButton fx:id="btnSave" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="332.0" layoutY="580.0" onAction="#btnSaveAction" prefHeight="61.0" prefWidth="59.0" ripplerFill="#c9c3c3" style="-fx-background-radius: 40 40 40 40;" stylesheets="@../css/customer.css">
+                    <cursor>
+                       <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <graphic>
+                       <MaterialDesignIconView fill="#263238" glyphName="CONTENT_SAVE" size="30" />
+                    </graphic>
+                 </JFXButton>
+                 <JFXButton fx:id="btnPurchases" alignment="CENTER" buttonType="RAISED" graphicTextGap="10.0" layoutX="795.0" layoutY="219.0" onAction="#showPurchases" prefHeight="50.0" prefWidth="147.0" ripplerFill="WHITE" stylesheets="@../css/customer.css" text="Orders">
+                    <cursor>
+                       <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <font>
+                       <Font size="15.0" />
+                    </font>
+               <graphic>
+                  <FontAwesomeIconView glyphName="RUPEE" size="24" />
+               </graphic>
+                 </JFXButton>
+                 <JFXButton fx:id="btnRentals" alignment="CENTER" buttonType="RAISED" disable="true" graphicTextGap="10.0" layoutX="795.0" layoutY="274.0" onAction="#showrentals" prefHeight="50.0" prefWidth="147.0" ripplerFill="WHITE" stylesheets="@../css/customer.css" text="Rentals">
+                    <cursor>
+                       <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <graphic>
+                       <FontAwesomeIconView fill="#263238" glyphName="RECYCLE" size="30" />
+                    </graphic>
+                    <font>
+                       <Font size="15.0" />
+                    </font>
+                 </JFXButton>
+                 <Label layoutX="289.0" layoutY="138.0" prefHeight="44.0" prefWidth="78.0" text="ID:" textFill="#615e5e">
+                    <font>
+                       <Font name="System Bold" size="14.0" />
+                    </font>
+                 </Label>
+                 <Label fx:id="customerID" layoutX="379.0" layoutY="144.0" prefHeight="31.0" prefWidth="195.0" text="ID" textFill="#0c9e33">
+                    <font>
+                       <Font name="System Bold" size="20.0" />
+                    </font>
+                 </Label>
+                 <Label layoutX="289.0" layoutY="452.0" prefHeight="44.0" prefWidth="78.0" text="Phone:" textFill="#615e5e">
+                    <font>
+                       <Font name="System Bold" size="14.0" />
+                    </font>
+                 </Label>
+                 <JFXButton fx:id="btnLViewAllCustomers" alignment="CENTER" buttonType="RAISED" graphicTextGap="10.0" layoutX="795.0" layoutY="329.0" onAction="#listAllCustomers" prefHeight="50.0" prefWidth="147.0" ripplerFill="WHITE" style="-fx-background-color: green; -fx-text-fill: white;" stylesheets="@../css/customer.css" text="Table View">
+                    <cursor>
+                       <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <graphic>
+                       <FontAwesomeIconView fill="WHITE" glyphName="TABLE" size="30" />
+                    </graphic>
+                    <font>
+                       <Font size="15.0" />
+                    </font>
+                 </JFXButton>
+                 <Label fx:id="lblPageIndex" alignment="CENTER" layoutX="462.0" layoutY="701.0" prefHeight="31.0" prefWidth="349.0" text="Showing m of n results." textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+                 <JFXTextField fx:id="txtSearch" alignment="CENTER" focusColor="#263238" layoutX="795.0" layoutY="35.0" prefHeight="31.0" prefWidth="248.0" promptText="search with merchant id/name" unFocusColor="#90d3da">
+                    <font>
+                       <Font name="Candara Light Italic" size="14.0" />
+                    </font>
+                 </JFXTextField>
+                 <JFXButton fx:id="btnSearch" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="1047.0" layoutY="29.0" onAction="#btnSearchAction" prefHeight="44.0" prefWidth="45.0" ripplerFill="WHITE" style="-fx-background-radius: 30 30 30 30; -fx-background-color: white;" stylesheets="@../css/customer.css">
+                    <cursor>
+                       <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <graphic>
+                       <FontAwesomeIconView fx:id="btnSeachIcon" fill="#11435b" glyphName="SEARCH" size="25" />
+                    </graphic>
+                    <tooltip>
+                       <Tooltip text="Search" />
+                    </tooltip>
+                 </JFXButton>
+                 <Circle fx:id="imgCustomerPhoto" fill="#ffffff00" layoutX="145.0" layoutY="209.0" radius="91.0" stroke="WHITE" strokeType="INSIDE">
+                    <effect>
+                       <DropShadow />
+                    </effect>
+                    <cursor>
+                       <Cursor fx:constant="HAND" />
+                    </cursor>
+                 </Circle>
+                 <JFXRadioButton fx:id="radioMale" layoutX="119.0" layoutY="412.0" text="Male">
+                    <toggleGroup>
+                       <ToggleGroup fx:id="gender" />
+                    </toggleGroup>
+                 </JFXRadioButton>
+                 <JFXRadioButton fx:id="radioFemale" layoutX="119.0" layoutY="441.0" stylesheets="@../css/customer.css" text="Female" toggleGroup="$gender" />
+            <Label layoutX="289.0" layoutY="187.0" prefHeight="44.0" prefWidth="78.0" text="Name:" textFill="#615e5e">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblSearchResults" alignment="CENTER_RIGHT" layoutX="631.0" layoutY="48.0" prefHeight="17.0" prefWidth="154.0" text="Results found!" visible="false" />
+            <Label fx:id="lblMode" layoutX="21.0" layoutY="23.0" prefHeight="51.0" prefWidth="248.0" text="Navigation Mode" textFill="#475668">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnDelete" alignment="CENTER" buttonType="RAISED" disable="true" graphicTextGap="10.0" layoutX="795.0" layoutY="384.0" onAction="#btnDelAction" prefHeight="50.0" prefWidth="147.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-text-fill: white;" text="Delete Entry" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="30" />
+               </graphic>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="692.0" layoutY="148.0" prefHeight="51.0" prefWidth="134.0" text="Operations" textFill="GREEN">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="795.0" layoutY="458.0" prefHeight="44.0" prefWidth="78.0" text="Total Due:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="customerDue" layoutX="880.0" layoutY="464.0" prefHeight="31.0" prefWidth="189.0" text="DUE" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="addressTwo" alignment="TOP_LEFT" editable="false" focusColor="#263238" layoutX="372.0" layoutY="322.0" prefHeight="31.0" prefWidth="240.0" promptText="Street, City" unFocusColor="#90d3da">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="addressThree" alignment="TOP_LEFT" editable="false" focusColor="#263238" layoutX="372.0" layoutY="379.0" prefHeight="31.0" prefWidth="240.0" promptText="Town, Pincode" unFocusColor="#90d3da">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXTextField>
+            <Label fx:id="lblMode1" layoutX="289.0" layoutY="76.0" prefHeight="51.0" prefWidth="248.0" text="Merchant Details" textFill="#253238" textOverrun="CLIP" underline="true">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+              </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

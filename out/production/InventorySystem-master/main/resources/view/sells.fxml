@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rightPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="861.0" prefWidth="1750.0" stylesheets="/main/resources/css/sells.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.OrdersController">
+   <children>
+      <ImageView fx:id="cartIcon" fitHeight="50.0" fitWidth="50.0" layoutX="497.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/cart-icon.png" />
+         </image></ImageView>
+      <Circle fill="#ffeb1f" layoutX="527.0" layoutY="117.0" radius="11.0" stroke="#f5f5f5" strokeType="INSIDE" />
+      <Label fx:id="cartCount" alignment="CENTER" layoutX="519.0" layoutY="107.0" prefHeight="20.0" prefWidth="17.0" style="White: #D35400;" text="0" textFill="#3aab28">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="638.0" layoutX="5.0" layoutY="143.0" stroke="#a2d1f8bf" strokeLineCap="ROUND" strokeWidth="0.1" width="553.0">
+         <effect>
+            <DropShadow color="#a2d1f8" />
+         </effect>
+      </Rectangle>
+      <Pane fx:id="orderStatusPane" layoutX="12.0" layoutY="202.0" prefHeight="572.0" prefWidth="540.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="317.0" layoutX="9.0" layoutY="197.0" stroke="#e1f1ff" strokeType="INSIDE" width="521.0">
+               <effect>
+                  <DropShadow color="#e1f1ff" />
+               </effect>
+            </Rectangle>
+            <Label layoutX="19.0" layoutY="185.0" prefHeight="24.0" prefWidth="160.0" style="-fx-background-color: white;" text="Payment Information" textFill="#0c5257">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="132.0" layoutX="4.0" layoutY="25.0" stroke="#e1f1ff" strokeType="INSIDE" width="530.0">
+               <effect>
+                  <DropShadow color="#e1f1ff" />
+               </effect>
+            </Rectangle>
+            <Label layoutX="12.0" layoutY="16.0" prefHeight="24.0" prefWidth="160.0" style="-fx-background-color: white;" text="Delivery Information" textFill="#0c5257">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="50.0" prefHeight="41.0" prefWidth="98.0" text="Delivered to, " />
+            <JFXDatePicker layoutX="132.0" layoutY="97.0" />
+            <Label layoutX="19.0" layoutY="104.0" prefHeight="31.0" prefWidth="98.0" text="Delivered on, " />
+            <JFXButton fx:id="loadAgain1" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="390.0" layoutY="110.0" onAction="#loadAgain" prefHeight="36.0" prefWidth="109.0" ripplerFill="#d0ce4f" style="-fx-background-color: white;" stylesheets="@../css/sells.css" text="Mark Delivered" textFill="#278650">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXTextArea layoutX="132.0" layoutY="29.0" prefHeight="50.0" prefWidth="384.0" />
+            <JFXDatePicker layoutX="287.0" layoutY="286.0" prefHeight="31.0" prefWidth="211.0" />
+            <Label layoutX="52.0" layoutY="286.0" prefHeight="31.0" prefWidth="128.0" text="Payment Date" />
+            <Label layoutX="50.0" layoutY="211.0" prefHeight="31.0" prefWidth="261.0" text="Total bill for current order (with tax):" />
+            <Label layoutX="376.0" layoutY="216.0" prefHeight="21.0" prefWidth="98.0" text="\$ 1200.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="49.0" layoutY="332.0" prefHeight="31.0" prefWidth="128.0" text="Payment Mode" />
+            <JFXComboBox layoutX="287.0" layoutY="332.0" prefHeight="31.0" prefWidth="205.0" />
+            <Label layoutX="51.0" layoutY="427.0" prefHeight="31.0" prefWidth="128.0" text="Transaction ID " />
+            <JFXTextField layoutX="286.0" layoutY="416.0" prefHeight="31.0" prefWidth="205.0" />
+            <JFXButton fx:id="loadAgain11" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="417.0" layoutY="467.0" onAction="#loadAgain" prefHeight="36.0" prefWidth="77.0" ripplerFill="#d0ce4f" style="-fx-background-color: white;" stylesheets="@../css/sells.css" text="Pay" textFill="#278650">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="4.0" layoutY="519.0" onAction="#gotoProductDetails" prefHeight="50.0" prefWidth="50.0" ripplerFill="#c9c3c3" style="-fx-background-radius: 40 40 40 40;" stylesheets="@../css/customer.css" text=" ">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIconView fill="#385ab5" glyphName="ARROW_LEFT" size="30" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Clear all records" />
+               </tooltip>
+            </JFXButton>
+            <Label layoutX="52.0" layoutY="385.0" prefHeight="31.0" prefWidth="128.0" text="Paid Amount ($)" />
+            <JFXTextField layoutX="287.0" layoutY="376.0" prefHeight="31.0" prefWidth="205.0" />
+            <Label layoutX="49.0" layoutY="243.0" prefHeight="31.0" prefWidth="261.0" text="Total amount due (with tax):" />
+            <Label layoutX="375.0" layoutY="248.0" prefHeight="21.0" prefWidth="98.0" text="\$ 1200.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="paymentDetailsPane" layoutX="7.0" layoutY="208.0" prefHeight="572.0" prefWidth="553.0" visible="false">
+         <children>
+            <Label layoutX="357.0" layoutY="441.0" text="GST (18%)" textFill="#104020">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font></Label>
+            <Label layoutX="267.0" layoutY="466.0" text="Total price including tax" textFill="#104020">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font></Label>
+            <Label layoutX="342.0" layoutY="409.0" text="Delivery Fee" textFill="#104020">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font></Label>
+            <Label layoutX="351.0" layoutY="375.0" text="Total price" textFill="#104020">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font></Label>
+            <Label fx:id="totalPrice" layoutX="439.0" layoutY="375.0" prefHeight="21.0" prefWidth="77.0" text="0" textFill="#104020">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="deliveryFee" layoutX="439.0" layoutY="409.0" prefHeight="21.0" prefWidth="77.0" text="0" textFill="#104020">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="gstPrice" layoutX="439.0" layoutY="441.0" prefHeight="21.0" prefWidth="77.0" text="0" textFill="#104020">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="totalPriceWithtax" layoutX="439.0" layoutY="466.0" prefHeight="21.0" prefWidth="77.0" text="0" textFill="#104020">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="470.0" layoutY="508.0" onAction="#saveOrder" prefHeight="50.0" prefWidth="50.0" ripplerFill="#c9c3c3" style="-fx-background-radius: 40 40 40 40;" stylesheets="@../css/customer.css" text=" ">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIconView fx:id="gotoCustomerDetails2" fill="#385ab5" glyphName="SAVE" size="30" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Clear all records" />
+               </tooltip>
+            </JFXButton>
+            <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="14.0" layoutY="508.0" onAction="#gotoCustomerDetails" prefHeight="50.0" prefWidth="50.0" ripplerFill="#c9c3c3" style="-fx-background-radius: 40 40 40 40;" stylesheets="@../css/customer.css" text=" ">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIconView fill="#385ab5" glyphName="ARROW_LEFT" size="30" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Clear all records" />
+               </tooltip>
+            </JFXButton>
+            <TableView fx:id="paymentOrderItemTable" layoutX="4.0" layoutY="1.0" prefHeight="375.0" prefWidth="540.0" stylesheets="@../css/order_payment.css">
+              <columns>
+                <TableColumn fx:id="paymentIdCol" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="paymentProductCol" prefWidth="318.9999694824219" text="Products" />
+                  <TableColumn fx:id="paymentQtyCol" prefWidth="48.0" text="Qty." />
+                  <TableColumn fx:id="paymentPriceCol" prefWidth="97.0" text="Price" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane fx:id="customerDetailsPane" layoutX="7.0" layoutY="200.0" prefHeight="572.0" prefWidth="547.0" visible="false">
+         <children>
+            <Label layoutX="39.0" layoutY="26.0" prefHeight="21.0" prefWidth="149.0" text="Customer Name" textFill="#204c72" />
+            <JFXComboBox fx:id="selectCustomer" layoutX="214.0" layoutY="21.0" onAction="#loadCustomer" prefHeight="31.0" prefWidth="236.0" promptText="Select Customer" />
+            <Label layoutX="29.0" layoutY="59.0" prefHeight="21.0" prefWidth="408.0" text="**For adding new customer, go to administrative window" textFill="#2036c6">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="197.0" prefHeight="21.0" prefWidth="168.0" text="Billing/Delivery Address" textFill="#204c72" />
+            <JFXTextField fx:id="customerMobile" layoutX="214.0" layoutY="91.0" prefHeight="31.0" prefWidth="236.0" />
+            <Label layoutX="40.0" layoutY="96.0" prefHeight="21.0" prefWidth="160.0" text="Mobile" textFill="#204c72" />
+            <FontAwesomeIconView glyphName="USER" layoutX="22.0" layoutY="41.0" size="16" />
+            <FontAwesomeIconView glyphName="PHONE" layoutX="19.0" layoutY="112.0" size="16" />
+            <FontAwesomeIconView glyphName="HOME" layoutX="19.0" layoutY="213.0" size="16" text="" />
+            <Label layoutX="42.0" layoutY="140.0" prefHeight="21.0" prefWidth="160.0" text="Email" textFill="#204c72" />
+            <JFXTextField fx:id="customerEmail" layoutX="216.0" layoutY="135.0" prefHeight="31.0" prefWidth="236.0" />
+            <MaterialDesignIconView glyphName="CONTACT_MAIL" layoutX="22.0" layoutY="156.0" size="16" />
+            <JFXTextArea fx:id="customerAddress" layoutX="216.0" layoutY="197.0" prefHeight="110.0" prefWidth="236.0" />
+            <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="470.0" layoutY="515.0" onAction="#gotoPaymentDetails" prefHeight="50.0" prefWidth="50.0" ripplerFill="#c9c3c3" style="-fx-background-radius: 40 40 40 40;" stylesheets="@../css/customer.css" text=" ">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIconView fx:id="gotoCustomerDetails1" fill="#385ab5" glyphName="ARROW_RIGHT" size="30" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Clear all records" />
+               </tooltip>
+            </JFXButton>
+            <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="14.0" layoutY="515.0" onAction="#gotoProductDetails" prefHeight="50.0" prefWidth="50.0" ripplerFill="#c9c3c3" style="-fx-background-radius: 40 40 40 40;" stylesheets="@../css/customer.css" text=" ">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIconView fill="#385ab5" glyphName="ARROW_LEFT" size="30" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Clear all records" />
+               </tooltip>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane fx:id="productDetailsPane" layoutX="3.0" layoutY="200.0" prefHeight="572.0" prefWidth="553.0">
+         <children>
+            <JFXButton fx:id="gotoCustomerDetails" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" disable="true" graphicTextGap="0.0" layoutX="474.0" layoutY="514.0" onAction="#gotoCustomerDetails" prefHeight="50.0" prefWidth="50.0" ripplerFill="#c9c3c3" style="-fx-background-radius: 40 40 40 40;" stylesheets="@../css/customer.css" text=" ">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIconView fill="#385ab5" glyphName="ARROW_RIGHT" size="30" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Clear all records" />
+               </tooltip>
+            </JFXButton>
+            <JFXTextField fx:id="scannerInput" alignment="CENTER" focusColor="#229722" layoutX="97.0" layoutY="7.0" onKeyTyped="#onKeyTypedEvent" prefHeight="39.0" prefWidth="442.0" style="-fx-background-color: #FFFFBE;" unFocusColor="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="20.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton layoutX="14.0" layoutY="2.0" onAction="#focusScan" prefHeight="50.0" prefWidth="50.0" ripplerFill="#3ec63c">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/scan-barcode-icon.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <TableView fx:id="orderItemsTable" layoutX="17.0" layoutY="60.0" prefHeight="447.0" prefWidth="521.0" stylesheets="@../css/sells.css">
+              <columns>
+                  <TableColumn fx:id="orderItemIDCol" prefWidth="75.0" text="Order ID" />
+                  <TableColumn fx:id="orderItemNameCol" prefWidth="219.00001525878906" text="Product Name" />
+                  <TableColumn fx:id="orderItemModelCol" prefWidth="75.0" text="Model" />
+                  <TableColumn fx:id="orderItemQtyCol" prefWidth="75.0" text="Qty" />
+                  <TableColumn fx:id="orderItemPriceCol" prefWidth="75.0" text="Price" />
+              </columns>
+            </TableView>
+            <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="18.0" layoutY="514.0" onAction="#deleteOrderDetails" prefHeight="50.0" prefWidth="50.0" ripplerFill="#c9c3c3" style="-fx-background-radius: 40 40 40 40;" stylesheets="@../css/customer.css" text=" ">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIconView fill="RED" glyphName="TRASH" size="30" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Clear all records" />
+               </tooltip>
+            </JFXButton>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="1.0" prefHeight="85.0" prefWidth="1169.0" style="-fx-background-color: #253238;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="433.0" prefHeight="72.0" prefWidth="338.0" text="Orders" textFill="WHITE" AnchorPane.leftAnchor="433.0" AnchorPane.rightAnchor="433.0">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#f9ffb2" glyphName="LINE_CHART" size="40" />
+               </graphic>
+            </Label>
+            <Line endX="143.0" layoutX="319.0" layoutY="81.0" startX="448.0" AnchorPane.leftAnchor="461.5" AnchorPane.rightAnchor="401.5" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="5.0" layoutY="86.0" prefHeight="51.0" prefWidth="236.0" text="ORDER - Create" textFill="#34495e">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <LineChart fx:id="lineChart" layoutX="516.0" layoutY="193.0" legendVisible="false" prefHeight="382.0" prefWidth="627.0" title="Your Recent Sells/Day" visible="false" AnchorPane.leftAnchor="516.0" AnchorPane.rightAnchor="26.0">
+        <xAxis>
+          <CategoryAxis fx:id="dateAxis" animated="false" label="Date" prefHeight="11.0" prefWidth="569.0" side="BOTTOM" tickLabelGap="20.0" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="amountAxis" label="Amount" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Label layoutX="571.0" layoutY="91.0" prefHeight="51.0" prefWidth="211.0" text="ORDER - History" textFill="#34495e">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="salesOrdersTbl" layoutX="575.0" layoutY="139.0" prefHeight="638.0" prefWidth="1154.0" stylesheets="@../css/sells.css" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="21.0">
+         <columns>
+            <TableColumn fx:id="orderIdCol" text="Invoice" />
+            <TableColumn fx:id="statusCol" prefWidth="75.0" text="Status" />
+            <TableColumn fx:id="customerNameCol" prefWidth="178.0" text="Customer Name" />
+            <TableColumn fx:id="productsCol" editable="false" prefWidth="417.0" text="Products" />
+            <TableColumn fx:id="orderDateCol" prefWidth="127.0" text="Order Date" />
+            <TableColumn fx:id="qtyCol" prefWidth="43.0" text="Qty" />
+            <TableColumn fx:id="totalPriceCol" prefWidth="92.0" text="Total Price" />
+            <TableColumn fx:id="billCol" editable="false" maxWidth="1.7976931348623157E308" prefWidth="52.0" text="Bill" />
+         </columns>
+         <effect>
+            <DropShadow blurType="TWO_PASS_BOX" color="#a2d1f8" height="15.44" radius="7.1274999999999995" spread="0.1" width="15.07" />
+         </effect>
+      </TableView>
+      <JFXButton fx:id="btnBarchart" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="1517.0" layoutY="96.0" onAction="#btnBarchartAction" prefHeight="39.0" prefWidth="36.0" ripplerFill="WHITE" style="-fx-background-color: white;" stylesheets="@../css/sells.css" text=" ">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <FontAwesomeIconView fx:id="btnChartIcon" fill="#263238" glyphName="LINE_CHART" size="30" />
+         </graphic>
+         <font>
+            <Font size="15.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="Show Table/Stat" />
+         </tooltip>
+      </JFXButton>
+      <JFXButton fx:id="loadAgain" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="1464.0" layoutY="97.0" onAction="#loadAgain" prefHeight="36.0" prefWidth="42.0" ripplerFill="WHITE" style="-fx-background-color: white;" stylesheets="@../css/sells.css" text=" ">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <FontAwesomeIconView fill="#263238" glyphName="REFRESH" size="30" />
+         </graphic>
+         <font>
+            <Font size="12.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="Refresh" />
+         </tooltip>
+      </JFXButton>
+      <Pane fx:id="orderCreateStepperPane" layoutX="16.0" layoutY="147.0" prefHeight="51.0" prefWidth="540.0">
+         <children>
+            <Label layoutY="27.0" prefHeight="12.0" prefWidth="84.0" text="Product Details" textFill="#114a61">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="10.0" />
+               </font>
+            </Label>
+            <Circle fx:id="productDetailsStepper" fill="#3369ff" layoutX="39.0" layoutY="14.0" radius="9.0" stroke="#3369ff" strokeType="INSIDE" />
+            <Text fill="WHITE" layoutX="34.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="16.9999996499173">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Line fx:id="customerDetailsLine" endX="100.0" layoutX="134.0" layoutY="14.0" startX="-74.0" stroke="#3369ff" />
+            <Label layoutX="205.0" layoutY="27.0" prefHeight="12.0" prefWidth="91.0" text="Customer Details" textFill="#114a61">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="418.0" layoutY="26.0" prefHeight="12.0" prefWidth="84.0" text="Payment Details" textFill="#114a61">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="10.0" />
+               </font>
+            </Label>
+            <Line fx:id="paymentDetailsLine" endX="100.0" layoutX="345.0" layoutY="13.0" startX="-77.0" startY="1.52587890625E-5" stroke="#2b5bea" />
+            <Circle fx:id="customerDetailsStepper" fill="#3369ff" layoutX="249.0" layoutY="12.0" radius="9.0" stroke="#385ab5" strokeType="INSIDE" />
+            <Text fill="WHITE" layoutX="245.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" wrappingWidth="16.9999996499173">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Circle fx:id="paymentDetailsStepper" fill="#3369ff" layoutX="462.0" layoutY="14.0" radius="9.0" stroke="#385ab5" strokeType="INSIDE" />
+            <Text fill="WHITE" layoutX="459.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" wrappingWidth="16.9999996499173">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="orderViewStepperPane" layoutX="16.0" layoutY="147.0" prefHeight="51.0" prefWidth="540.0" visible="false">
+         <children>
+            <Label layoutY="27.0" prefHeight="12.0" prefWidth="84.0" text="Product Details" textFill="#114a61">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="10.0" />
+               </font>
+            </Label>
+            <Circle fx:id="productDetailsStepper1" fill="#3369ff" layoutX="33.0" layoutY="14.0" radius="9.0" stroke="#3369ff" strokeType="INSIDE" />
+            <Text fill="WHITE" layoutX="29.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="16.9999996499173">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Line fx:id="customerDetailsLine1" endX="23.949996948242188" layoutX="134.0" layoutY="14.0" startX="-83.05000305175781" stroke="#3369ff" strokeWidth="2.0" />
+            <Label layoutX="134.0" layoutY="27.0" prefHeight="12.0" prefWidth="91.0" text="Customer Details" textFill="#114a61">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="416.0" layoutY="26.0" prefHeight="12.0" prefWidth="128.0" text="Delivery/Payment Status" textFill="#114a61">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="10.0" />
+               </font>
+            </Label>
+            <Line fx:id="paymentDetailsLine1" endX="100.0" layoutX="370.0" layoutY="13.0" startX="-25.04998779296875" startY="1.52587890625E-5" stroke="#2b5bea" strokeWidth="2.0" />
+            <Circle fx:id="customerDetailsStepper1" fill="#3369ff" layoutX="175.0" layoutY="13.0" radius="9.0" stroke="#385ab5" strokeType="INSIDE" />
+            <Text fill="WHITE" layoutX="172.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" wrappingWidth="12.57140142001299">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Circle fx:id="paymentDetailsStepper1" fill="#3369ff" layoutX="483.0" layoutY="12.0" radius="9.0" stroke="#385ab5" strokeType="INSIDE" />
+            <Text fill="WHITE" layoutX="479.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" wrappingWidth="16.9999996499173">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Line fx:id="customerDetailsLine11" endX="25.95001220703125" layoutX="285.0" layoutY="14.0" startX="-87.05000305175781" stroke="#3369ff" strokeWidth="2.0" />
+            <Label layoutX="290.0" layoutY="27.0" prefHeight="12.0" prefWidth="91.0" text="Payment Details" textFill="#114a61">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="10.0" />
+               </font>
+            </Label>
+            <Circle fx:id="customerDetailsStepper11" fill="#3369ff" layoutX="326.0" layoutY="13.0" radius="8.0" stroke="#385ab5" strokeType="INSIDE" />
+            <Text fill="WHITE" layoutX="323.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" wrappingWidth="16.9999996499173">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <JFXTextField fx:id="searchKey" layoutX="1201.0" layoutY="102.0" onKeyPressed="#performSearch" prefHeight="31.0" prefWidth="236.0" promptText="Search by order id or Customer name" />
+   </children>
+</AnchorPane>

@@ -191,7 +191,7 @@ public class InventoryController implements Initializable{
         task.execute();
     }
 
-    private void reloadRecords(){
+    /*private void reloadRecords(){
         ObservableList<String> items = FXCollections.observableArrayList("9 watt", "12 watt", "15 watt", "22 watt");
         productModels.setItems(items);
 
@@ -235,7 +235,7 @@ public class InventoryController implements Initializable{
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
 
     public Object loadProductStockTable(){
