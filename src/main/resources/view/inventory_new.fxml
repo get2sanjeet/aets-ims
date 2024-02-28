@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="661.0" prefWidth="1107.0" stylesheets="/main/resources/css/inventory.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.InventoryController">
+   <children>
+      <AnchorPane fx:id="itemPane" layoutY="85.0" prefHeight="572.0" prefWidth="1107.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <AnchorPane layoutY="71.0" prefHeight="489.0" prefWidth="548.0">
+               <children>
+                  <Circle fx:id="imgBulbPhoto" fill="WHITE" layoutX="116.0" layoutY="97.0" radius="71.0" stroke="#154360" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Circle>
+                  <VBox layoutX="219.0" layoutY="26.0" prefHeight="200.0" prefWidth="276.0" style="-fx-spacing: 5.0;">
+                     <children>
+                        <HBox prefHeight="25.0" prefWidth="181.0">
+                           <children>
+                              <Label graphicTextGap="15.0" lineSpacing="10.0" prefHeight="20.0" prefWidth="120.0" text="Product Name" textFill="#083c2d">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Text fill="#083b2c" strokeType="OUTSIDE" strokeWidth="0.0" text="LED" wrappingWidth="90.46008110046387">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="25.0" prefWidth="181.0">
+                           <children>
+                              <Label graphicTextGap="15.0" lineSpacing="10.0" prefHeight="20.0" prefWidth="120.0" text="Product Model">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="9 watts" wrappingWidth="99.40929985046387">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="25.0" prefWidth="181.0">
+                           <children>
+                              <Label graphicTextGap="15.0" lineSpacing="10.0" prefHeight="20.0" prefWidth="120.0" text="Input Voltage">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="220-240V" wrappingWidth="96.96856498718262">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="25.0" prefWidth="181.0">
+                           <children>
+                              <Label graphicTextGap="15.0" lineSpacing="10.0" prefHeight="20.0" prefWidth="120.0" text="Frequency">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="50Hz." wrappingWidth="79.88384819030762">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="25.0" prefWidth="181.0">
+                           <children>
+                              <Label graphicTextGap="15.0" lineSpacing="10.0" prefHeight="20.0" prefWidth="120.0" text="Operating Temp">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="10°C-50°C" wrappingWidth="80.69744682312012">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="24.0" prefWidth="277.0">
+                           <children>
+                              <Label graphicTextGap="15.0" lineSpacing="10.0" prefHeight="20.0" prefWidth="120.0" text="Lumens">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Upto 1170 Lm" wrappingWidth="154.73129081726074">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="24.0" prefWidth="277.0">
+                           <children>
+                              <Label graphicTextGap="15.0" lineSpacing="10.0" prefHeight="20.0" prefWidth="120.0" text="Color">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CW" wrappingWidth="154.73129081726074">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <Separator layoutX="550.0" layoutY="86.0" orientation="VERTICAL" prefHeight="481.0" prefWidth="1.0" />
+            <Text fill="#0b2366" layoutX="199.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STOCK MANAGER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#0b2366" layoutX="760.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STOCKS">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <TableView fx:id="productStocksTable" layoutX="568.0" layoutY="86.0" prefHeight="270.0" prefWidth="536.0">
+              <columns>
+                <TableColumn fx:id="productTypeId" prefWidth="108.203369140625" text="Product Type Id" />
+                <TableColumn fx:id="productName" prefWidth="139.9322509765625" text="Product Name" />
+                  <TableColumn fx:id="productModel" prefWidth="155.3897705078125" text="Product Model" />
+                  <TableColumn fx:id="productAvailableStock" prefWidth="131.796630859375" text="Available Stock" />
+              </columns>
+            </TableView>
+            <AnchorPane fx:id="addTypePane" layoutX="568.0" layoutY="368.0" prefHeight="200.0" prefWidth="536.0">
+               <children>
+                  <JFXButton buttonType="RAISED" layoutX="207.0" layoutY="173.0" ripplerFill="#448df2db" stylesheets="@../css/inventory.css" text="Add Product Type (+)" textFill="#2d2083">
+                     <font>
+                        <Font name="System Bold" size="12.203390121459961" />
+                     </font>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color red="0.24431003630161285" green="0.4746169447898865" blue="0.9023297429084778" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </JFXButton>
+                  <VBox layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="276.0" style="-fx-spacing: 5.0;">
+                     <children>
+                        <HBox prefHeight="25.0" prefWidth="181.0">
+                           <children>
+                              <Label graphicTextGap="15.0" lineSpacing="10.0" prefHeight="20.0" prefWidth="120.0" text="Product Name" textFill="#083c2d">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextArea prefHeight="36.0" prefWidth="108.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="25.0" prefWidth="181.0">
+                           <children>
+                              <Label graphicTextGap="15.0" lineSpacing="10.0" prefHeight="20.0" prefWidth="120.0" text="Product Model">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="9 watts" wrappingWidth="99.40929985046387">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="25.0" prefWidth="181.0">
+                           <children>
+                              <Label graphicTextGap="15.0" lineSpacing="10.0" prefHeight="20.0" prefWidth="120.0" text="Input Voltage">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="220-240V" wrappingWidth="96.96856498718262">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="25.0" prefWidth="181.0">
+                           <children>
+                              <Label graphicTextGap="15.0" lineSpacing="10.0" prefHeight="20.0" prefWidth="120.0" text="Frequency">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="50Hz." wrappingWidth="79.88384819030762">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="25.0" prefWidth="181.0">
+                           <children>
+                              <Label graphicTextGap="15.0" lineSpacing="10.0" prefHeight="20.0" prefWidth="120.0" text="Operating Temp">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="10°C-50°C" wrappingWidth="80.69744682312012">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="4.0" prefHeight="85.0" prefWidth="1169.0" style="-fx-background-color: #253238;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="356.0" layoutY="6.0" prefHeight="72.0" prefWidth="376.0" text="PRODUCTS" textFill="WHITE" AnchorPane.leftAnchor="356.0" AnchorPane.rightAnchor="374.5762948044695">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

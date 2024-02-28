@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1000.0" prefWidth="1626.0" stylesheets="/main/resources/css/inventory.css" xmlns="http://javafx.com/javafx/8.0.371" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.InventoryController">
+   <children>
+      <AnchorPane fx:id="itemPane" layoutX="-6.0" layoutY="85.0" prefHeight="915.0" prefWidth="1627.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-29.0">
+         <children>
+            <AnchorPane layoutY="94.0" prefHeight="592.0" prefWidth="1000.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="657.0" layoutX="12.0" stroke="WHITE" strokeType="INSIDE" width="536.0">
+                     <effect>
+                        <DropShadow color="#a3d1f7" />
+                     </effect>
+                  </Rectangle>
+                  <AnchorPane fx:id="loaderPane" layoutX="27.0" layoutY="13.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="506.0" visible="false">
+                     <children>
+                        <ProgressIndicator fx:id="barcodeProgressIndicator" layoutX="130.0" layoutY="35.0" prefHeight="181.0" prefWidth="257.0" progress="0.0" style="-fx-progress-color: #65D888;" />
+                        <Label fx:id="txtBarcodeGenerated" layoutX="130.0" layoutY="251.0" prefWidth="312.0" text="You are almost there.....  " textFill="#15678a" wrapText="true">
+                           <font>
+                              <Font name="Calibri" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txtBarcodeGenerated1" layoutX="130.0" layoutY="289.0" prefWidth="312.0" text="Generating barcodes please wait . . . . ." textFill="#1e81ae" wrapText="true">
+                           <font>
+                              <Font name="Calibri" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="countOfBarcode" layoutX="350.0" layoutY="285.0" prefHeight="25.0" prefWidth="38.0" textFill="#1e81ae">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txtBarcodeGenerated11" layoutX="300.0" layoutY="300.0" prefHeight="31.0" prefWidth="176.0" text="barcodes generated." textFill="#1e81ae" wrapText="true">
+                           <font>
+                              <Font name="Calibri" size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="471.0" layoutY="-5.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#hideBarcodePane" prefHeight="30.0" prefWidth="30.0" ripplerFill="#c9c3c3" style="-fx-background-radius: 40 40 40 40;" stylesheets="@../css/customer.css" text=" ">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="REMOVE" size="24" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="formPane" layoutX="27.0" layoutY="29.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="368.0" prefWidth="506.0">
+                     <children>
+                        <Label layoutX="20.0" layoutY="31.0" prefHeight="59.0" prefWidth="213.0" text="New barcodes are required for which product ?" textFill="#225f83" wrapText="true" />
+                        <JFXComboBox fx:id="productNames" layoutX="253.0" layoutY="31.0" onAction="#loadWatts" prefHeight="31.0" prefWidth="213.0" />
+                        <Label layoutX="23.0" layoutY="100.0" prefHeight="31.0" prefWidth="121.0" text="How many watts ?" textFill="#225f83" />
+                        <JFXComboBox fx:id="productModels" layoutX="257.0" layoutY="100.0" onAction="#loadPrice" prefHeight="31.0" prefWidth="205.0" />
+                        <Label layoutX="23.0" layoutY="162.0" prefHeight="31.0" prefWidth="153.0" text="Number of quantities ?" textFill="#225f83" />
+                        <JFXTextField fx:id="productQty" layoutX="261.0" layoutY="162.0" prefHeight="31.0" prefWidth="205.0">
+                           <tooltip>
+                              <Tooltip text="Cannot exceed 200 count" />
+                           </tooltip>
+                        </JFXTextField>
+                        <Label layoutX="23.0" layoutY="221.0" prefHeight="59.0" prefWidth="227.0" text="Price for the selected product type is (Rupees)" textFill="#225f83" wrapText="true" />
+                        <JFXTextField fx:id="perPeicePrice" layoutX="261.0" layoutY="228.0" prefHeight="31.0" prefWidth="205.0" />
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="386.0" layoutY="295.0" onAction="#generateBarcodes" prefHeight="50.0" prefWidth="80.0" ripplerFill="#c9c3c3" style="-fx-background-radius: 40 40 40 40;" stylesheets="@../css/customer.css" text=" ">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="52.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/barcode-generate-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                  <JFXButton fx:id="stockUploadBtn" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="230.0" layoutY="514.0" onAction="#loadStockScanWindow" prefHeight="73.0" prefWidth="100.0" ripplerFill="#c9c3c3" style="-fx-background-radius: 40 40 40 40;" stylesheets="@../css/customer.css" text=" ">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="73.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/barcode-scan-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Label layoutX="177.0" layoutY="614.0" text="Scan to check you barcode details" textFill="#204168">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <MaterialDesignIconView fill="#204168" glyphName="CAMERA" layoutX="161.0" layoutY="629.0" size="14.0" />
+               </children>
+            </AnchorPane>
+            <Text fill="#0b2366" layoutX="94.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BARCODE GENERATOR">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <TableView fx:id="productStocksTable" layoutX="562.0" layoutY="86.0" prefHeight="657.0" prefWidth="821.0" stylesheets="@../css/base.css">
+               <columns>
+                  <TableColumn fx:id="productTypeIdCol" prefWidth="108.203369140625" text="Id" />
+                  <TableColumn fx:id="productNameCol" prefWidth="296.94915771484375" text="PRODUCT NAME" />
+                  <TableColumn fx:id="productModelCol" prefWidth="103.0" text="MODEL" />
+                  <TableColumn prefWidth="91.0" text="NEW" />
+                  <TableColumn fx:id="productAvailableStockCol" prefWidth="116.0" text="IN STOCK" />
+                  <TableColumn fx:id="productPriceCol" prefWidth="105.0" text="Price($)" />
+               </columns>
+               <effect>
+                  <DropShadow color="#a3d1f7" />
+               </effect>
+            </TableView>
+            <HBox layoutX="12.0" layoutY="57.0" prefHeight="24.0" prefWidth="788.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="23.0" prefWidth="111.0" style="-fx-background-color: #154360;" text="⚠Notification" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="notification" alignment="CENTER" prefHeight="24.0" prefWidth="424.0" style="-fx-border-color: #154360;" textFill="#2a9738">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <ImageView fitHeight="31.0" fitWidth="91.0" layoutX="22.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/barcode-icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="4.0" prefHeight="85.0" prefWidth="1369.0" style="-fx-background-color: #253238;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="356.0" layoutY="6.0" prefHeight="72.0" prefWidth="376.0" text="PRODUCTS * STOCKS" textFill="WHITE" AnchorPane.leftAnchor="356.0" AnchorPane.rightAnchor="374.5762948044695">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

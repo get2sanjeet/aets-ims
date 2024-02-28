@@ -1,0 +1,143 @@
+/**
+ * Author: Afif Al Mamun
+ * Written on: 08-Jul-18
+ * Project: TeslaRentalInventory
+ **/
+
+.split-pane > .split-pane-divider {
+    -fx-padding: 0 0.004;
+    -fx-background-color: #263238;
+}
+
+.root {
+    -fx-background-color: #263238;
+}
+
+.button {
+    -fx-text-fill: #ffffff;
+    -fx-text-alignment: center;
+    -fx-font-size: 15px;
+    -fx-border-radius: 0 0 0 0;
+}
+
+#topPane {
+    -fx-background-color: #37474f;
+}
+
+.button:pressed:hover {
+    -fx-background-color: #37474F;
+    -fx-font-weight: bold;
+    -fx-scale-y: 0.95;
+    -fx-scale-x: 0.95;
+}
+
+.button:hover {
+    -fx-background-color: #37474F;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+#paneRight {
+    -fx-border-color: #ffffff;
+}
+
+#paneAccountSection {
+    /*-fx-background-color: #37474F;*/
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 10 10 10 10;
+}
+
+.jfx-snackbar-content {
+    -fx-background-color: red;
+    -fx-text-fill: white;
+    -fx-background-radius: 10 10 10 10;
+}
+.jfx-snackbar-toast {
+    -fx-text-fill: white;
+}
+
+* {
+    -fx-primary :#EBF5FB;
+    -fx-secondary : #7FB3D5;
+    -fx-primarytext : #000000;
+    -fx-blue: #1976D2;
+    -fx-red: #FF0000;
+    -fx-color-1:#1976D2;
+}
+
+/*TableView Default*/
+.table-view{
+    -fx-background-color: derive(-fx-primary, 40%);
+    -fx-font-size: 1em;
+    -fx-border-color: none;
+}
+.table-view:focused{
+    -fx-background-color: derive(-fx-primary, 20%);
+}
+.table-row-cell {
+    -fx-cell-size: 2.5em;
+}
+.table-view .column-header-background{
+    -fx-background-color:  #34495E;
+}
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+.table-view .table-cell{
+    -fx-text-fill: #000000;
+}
+.table-row-cell:focused, .table-cell:focused{
+    -fx-text-fill: -fx-primary;
+}
+.table-row-cell{
+    -fx-background-color: -fx-primary;
+    -fx-border-color: transparent;
+    -fx-table-cell-border-color: transparent;
+}
+.table-column{
+    -fx-alignment: CENTER;
+}
+.table-row-cell:even{
+    -fx-background-color: derive(-fx-primary, 40%);
+}
+.table-row-cell:selected {
+    -fx-background-color: -fx-secondary;
+    -fx-text-fill: -fx-primary;
+    -fx-background-insets: 0;
+}
+.table-row-cell:selected .table-cell{
+    -fx-text-fill: -fx-primary;
+}
+.placeholder .label{
+    -fx-text-fill: white;
+}
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background,
+.table-view > .virtual-flow > .scroll-bar:horizontal,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
+    -fx-background-color: transparent;
+}
+.table-view > .virtual-flow > .scroll-bar > .increment-button,
+.table-view > .virtual-flow > .scroll-bar > .decrement-button {
+    -fx-text-fill: white;
+}
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb{
+    -fx-background-color: derive(-fx-primary, 60%);
+    -fx-border-color: transparent;
+    -fx-background-radius: 5em;
+}
+.table-view .filler{
+    -fx-fill: -fx-primary;
+    -fx-background-color: -fx-primary;
+}
+.table-context
+{
+    -fx-base: -fx-primary;
+}
